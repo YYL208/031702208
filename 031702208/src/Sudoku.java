@@ -96,7 +96,7 @@ public class Sudoku
 		{
 			/*System.out.println(row+" "+col);//代码测试
 			writeOutArray();*/
-			if(row>phraseWordNum||col>phraseWordNum||row<1||col<1)
+			if(row>phraseWordNum||col>phraseWordNum||row<0||col<0)
 			{
 					System.out.println("待填空缺获取坐标越界");
 						System.exit(-1);
