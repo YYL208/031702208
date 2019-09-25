@@ -59,12 +59,14 @@ public class Sudoku
 		 }
 		 catch (FileNotFoundException e1) 
 			 {
+			 System.out.println("File Not Found");
 			e1.printStackTrace();
 			System.exit(-1);
 			 }
 			catch (IOException e2) 
 			{
 				e2.printStackTrace();
+				System.exit(-1);
 			 }
 	}
 	public static void loadArgs(String args[])/*读取指令*/
@@ -81,6 +83,8 @@ public class Sudoku
 					phraseWordNum = Integer.valueOf(args[++i]);
 				else if((args[i].compareTo("-n"))==0)
 					sortedPrintNum = Integer.valueOf(args[++i]);
+				else 
+					System.out.println("输入格式错误");
 			}
 		}
 		else
@@ -92,6 +96,12 @@ public class Sudoku
 		{
 			/*System.out.println(row+" "+col);//代码测试
 			writeOutArray();*/
+			if(row>phraseWordNum||col>phraseWordNum||row<1||col<1)
+			{
+					System.out.println("待填空缺获取坐标越界");
+						System.exit(-1);
+			}
+				
 			for(int i = 1 ; i <= phraseWordNum ;i++)
 			{
 				if(differentInRow(row,i)&&differentInCol(col,i)&&differentInPalace(row,col,i))/*填上行列宫都没有出现过的数字*/
