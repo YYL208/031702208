@@ -166,7 +166,6 @@ public class Sudoku
 				}
 			}
 			return true;
-			
 		}
 		static int [] nextEmpty(int row,int col)//寻找未填空缺
 	{
